@@ -1,6 +1,6 @@
-export default function MainContent({children}){
+export default function MainContent({children, onClick}){
     return(
-        <section className="relative w-full bg-gray-200">
+        <section onClick={onClick}>
             {children}
         </section>
     )
