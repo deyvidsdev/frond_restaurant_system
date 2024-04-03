@@ -44,7 +44,7 @@ function App() {
           <SidebarItem icon={<Users size={20}/>} text="Usuarios" active={content === "Usuarios"} onClick={() => handleContentClick("Usuarios")}/>
           <SidebarItem icon={<Pencil size={20}/>} text="Salas" active={content === "Salas"} onClick={() => handleContentClick("Salas")}/>
         </Sidebar>
-        <section className='w-full bg-gray-100'>
+        <section className=' w-full min-h-screen ml-64 bg-gray-100'>
           {contentMap[content]}
         </section>
       </div>

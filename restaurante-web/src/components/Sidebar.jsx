@@ -2,7 +2,7 @@ import { Bolt, CircleHelp } from "lucide-react"
 
 export default function Sidebar ({children}) {
     return(
-            <aside className="h-screen">
+            <aside className="h-screen fixed w-64">
                 <nav className="h-full flex flex-col bg-white border-r shadow-sm">
                     <div className="p-4 py-10 flex justify-center items-center border-b">
                         <h1 className="w-32 text-4xl text-center text-blue-900 font-bold">PRUEBA</h1>
