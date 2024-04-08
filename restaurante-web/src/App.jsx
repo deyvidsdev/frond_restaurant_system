@@ -15,7 +15,7 @@ import SalasContent from './components/SalasContent'
 function App() {
 
   //Estado poner activo el elemento y cambiar el contenido
-  const [content, setContent] = useState("Dashboard")
+  const [content, setContent] = useState("Categorias")
   const contentMap = {
     Dashboard: <DashboardContent/>,
     Ventas: <VentasContent/>,
