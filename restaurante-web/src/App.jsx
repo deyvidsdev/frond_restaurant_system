@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { ClipboardList, Coffee, Folder, LayoutDashboard, Pencil, ShoppingCart, ToggleLeft, Users } from "lucide-react"
 import Sidebar, { SidebarItem } from './components/Sidebar'
 import MainContent from './components/MainContent'
@@ -32,6 +32,7 @@ function App() {
     }
   }
 
+  
   return (
     <>
       <div className="flex">
@@ -44,7 +45,8 @@ function App() {
           <SidebarItem icon={<Users size={20}/>} text="Usuarios" active={content === "Usuarios"} onClick={() => handleContentClick("Usuarios")}/>
           <SidebarItem icon={<Pencil size={20}/>} text="Salas" active={content === "Salas"} onClick={() => handleContentClick("Salas")}/>
         </Sidebar>
-        <section className=' w-full min-h-screen ml-64 bg-gray-100'>
+        
+        <section className={`w-full min-h-screen bg-gray-100`}>
           {contentMap[content]}
         </section>
       </div>

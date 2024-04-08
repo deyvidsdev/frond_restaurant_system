@@ -49,7 +49,7 @@ export default function DataTable() {
     return (
         
 
-            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white mx-10'>
+            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white'>
                 <table className='table-auto border border-gray-200 w-full ' >
                     <thead className='bg-white'>
                         {table.getHeaderGroups().map(headerGroup => (
