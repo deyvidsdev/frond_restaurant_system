@@ -1,5 +1,5 @@
 import './App.css'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 import { ClipboardList, Coffee, Folder, LayoutDashboard, Pencil, ShoppingCart, ToggleLeft, Users } from "lucide-react"
 import Sidebar, { SidebarItem } from './components/Sidebar'
 import MainContent from './components/MainContent'
@@ -10,6 +10,10 @@ import CategoriasContent from './components/CategoriasContent'
 import InsumosContent from './components/InsumosContent'
 import UsuariosContent from './components/UsuariosContent'
 import SalasContent from './components/SalasContent'
+import useTheme from './hook/useTheme'
+import { ThemeProvider } from './context/ThemeProvider'
+
+
 
 
 function App() {
@@ -32,10 +36,13 @@ function App() {
     }
   }
 
+  const { theme } = useTheme()
+
   
+
   return (
-    <>
-      <div className="flex">
+    
+      <div className={`flex  ${theme}`}>
         <Sidebar>
           <SidebarItem icon={<LayoutDashboard size={20}/>} text="Dashboard" active={content === "Dashboard"} onClick={() => handleContentClick("Dashboard")}/>
           <SidebarItem icon={<ShoppingCart size={20}/>} text="Ventas" active={content === "Ventas"} onClick={() => handleContentClick("Ventas")}/>
@@ -46,12 +53,12 @@ function App() {
           <SidebarItem icon={<Pencil size={20}/>} text="Salas" active={content === "Salas"} onClick={() => handleContentClick("Salas")}/>
         </Sidebar>
         
-        <section className={`w-full min-h-screen bg-gray-100`}>
+        <section className={`w-full min-h-screen bg-gray-50 dark:bg-gray-800`}>
           {contentMap[content]}
         </section>
       </div>
     
-    </>
+    
   )
 }
 

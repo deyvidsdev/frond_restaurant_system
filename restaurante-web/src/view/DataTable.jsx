@@ -49,9 +49,9 @@ export default function DataTable() {
     return (
         
 
-            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white'>
-                <table className='table-auto border border-gray-200 w-full ' >
-                    <thead className='bg-white'>
+            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gray-700 dark:text-gray-200'>
+                <table className='table-auto border border-gray-200 dark:border-gray-500 w-full ' >
+                    <thead>
                         {table.getHeaderGroups().map(headerGroup => (
                             <tr key={headerGroup.id} className=' text-left'>
                                 {headerGroup.headers.map((header, index) => (
@@ -68,11 +68,11 @@ export default function DataTable() {
                             </tr>
                         ))}
                     </thead>
-                    <tbody className='bg-white'>
+                    <tbody>
                         {table.getRowModel().rows.map(row => (
-                            <tr key={row.id} className='border border-gray-200'>
+                            <tr key={row.id} className='border border-gray-200 dark:border-gray-500'>
                                 {row.getVisibleCells().map((cell, index) => (
-                                    <td key={cell.id} className={`py-4 pl-3 ${index === row.getVisibleCells().length - 1  ? 'text-right pr-4 text-gray-500' : ''} `} >
+                                    <td key={cell.id} className={`py-4 pl-3 ${index === row.getVisibleCells().length - 1  ? 'text-right pr-4 text-gray-500 dark:text-gray-200' : ''} `} >
                                         {flexRender(
                                             cell.column.columnDef.cell,
                                             cell.getContext()
@@ -83,10 +83,10 @@ export default function DataTable() {
                         ))}
                     </tbody>
                 </table>
-                <div className='mt-4 flex items-center justify-between'>
+                <div className='mt-4 flex items-center justify-center'>
                     <div className='flex items-center gap-2'>
-                        <button className='text-gray-600 py-1 px-2 rounded-lg 
-                        border border-white hover:bg-gray-100 disabled:hover:bg-white'
+                        <button className='text-gray-600 dark:text-gray-300 py-1 px-2 rounded-lg 
+                        border border-white dark:border-none hover:bg-gray-100 dark:hover:bg-gray-500 disabled:hover:bg-white'
                         onClick={() => table.previousPage()}
                         disabled={!table.getCanPreviousPage()} > 
                             {'<'}
@@ -95,16 +95,16 @@ export default function DataTable() {
                         {table.getPageOptions().map((value, key) => (
                             <button key={key} 
                             className={classNames({
-                                "text-gray-600 py-1 px-2 rounded-lg border border-white hover:bg-gray-100 disabled:hover:border-white": true,
-                                "bg-gray-200 border border-gray-200": value === table.getState().pagination.pageIndex
+                                "text-gray-600 dark:text-gray-300 py-1 px-2 rounded-lg border border-white dark:border-none hover:bg-gray-100 dark:hover:bg-gray-500 disabled:hover:border-white": true,
+                                "bg-gray-200 dark:bg-gray-500 border border-gray-200": value === table.getState().pagination.pageIndex
                             })}
                             onClick={() => table.setPageIndex(value)}>
                                 {value + 1}
                             </button>
                         ))}
 
-                        <button className='text-gray-600 py-1 px-2 rounded-lg 
-                        border border-white hover:bg-gray-100 disabled:hover:bg-white'
+                        <button className='text-gray-600 dark:text-gray-300 py-1 px-2 rounded-lg 
+                        border border-white dark:border-none hover:bg-gray-100 dark:hover:bg-gray-500 disabled:hover:bg-white'
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}> 
                             {'>'}
