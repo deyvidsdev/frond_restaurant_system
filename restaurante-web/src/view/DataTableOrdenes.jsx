@@ -1,11 +1,11 @@
 import { flexRender, getCoreRowModel, useReactTable, getPaginationRowModel } from '@tanstack/react-table'
 import { useState } from 'react'
-import { defaultData } from '../utils/defaultData'
+import { defaultDataOrdenes } from '../utils/defaultDataOrdenes'
 import { Pencil, Trash2, Info} from 'lucide-react'
 import classNames from 'classnames'
 
-export default function DataTable() {
-    const [data, setData] = useState(defaultData)
+export default function DataTableOrdenes() {
+    const [data, setData] = useState(defaultDataOrdenes)
 
     const columns = [
         {
@@ -15,27 +15,21 @@ export default function DataTable() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'insume'
+        },
+        {
+            accessorKey: 'quantity'
         },
         {
             accessorKey: 'description'
         },
         {
-            accessorKey: ' ',
-            cell: () => ( 
-                <>
-                    <button >
-                        <Pencil size={20} />
-                    </button>
-                    <button className='ml-14'>
-                        <Trash2 size={20} />
-                    </button>
-                    <button className='ml-14'>
-                        <Info size={20} />
-                    </button>
-                </>
-            )
+            accessorKey: 'waiter'
         },
+        {
+            accessorKey: 'table'
+        },
+        
         
     ]
 
@@ -55,7 +49,7 @@ export default function DataTable() {
                         {table.getHeaderGroups().map(headerGroup => (
                             <tr key={headerGroup.id} className=' text-left'>
                                 {headerGroup.headers.map((header, index) => (
-                                    <th key={header.id} className={`pl-3 py-4 ${index === 0 ? 'w-10' : 'w-72'}`} >
+                                    <th key={header.id} className={`pl-3 py-4 ${index === 0 ? 'w-10' : ''} ${index === 5  ? 'text-right pr-4 w-10' : ''}`} >
                                         {header.isPlaceholder
                                             ? null
                                             : flexRender(
@@ -72,7 +66,10 @@ export default function DataTable() {
                         {table.getRowModel().rows.map(row => (
                             <tr key={row.id} className='border border-gray-200 dark:border-gray-500'>
                                 {row.getVisibleCells().map((cell, index) => (
-                                    <td key={cell.id} className={`py-4 pl-3 ${index === row.getVisibleCells().length - 1  ? 'text-right pr-4 text-gray-500 dark:text-gray-200' : ''} `} >
+                                    <td key={cell.id} className= {`py-4 pl-3 pr-4 dark:text-gray-200 ${cell.getValue() === 'active' ? 'text-green-400 font-semibold dark:text-green-400' : 'dark:text-gray-200'}
+                                    ${cell.getValue() === 'offline' ? 'text-gray-800 font-semibold dark:text-gray-800' : 'dark:text-gray-200'}
+                                    ${cell.getValue() === 'wait' ? 'text-yellow-600 font-semibold dark:text-yellow-500 ' : 'dark:text-gray-200'}
+                                    ${index === row.getVisibleCells().length - 1  ? 'text-right pr-4' : ''} `} >
                                         {flexRender(
                                             cell.column.columnDef.cell,
                                             cell.getContext()

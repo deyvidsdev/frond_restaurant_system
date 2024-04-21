@@ -1,4 +1,4 @@
-export const defaultData = [
+export const defaultDataCategorias = [
     {
         name: 'Tanner',
         description: 'sdasdasd'

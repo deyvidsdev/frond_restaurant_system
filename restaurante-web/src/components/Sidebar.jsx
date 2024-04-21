@@ -23,8 +23,7 @@ export default function Sidebar ({children}) {
 
                     <div className="border-t dark:border-gray-700 flex flex-col px-3">
                     <SidebarContext.Provider value={{ expanded }}>
-                        <SidebarItem icon={<Bolt size={20}/>} text="Ajustes" />
-                        <SidebarItem icon={<CircleHelp size={20}/>} text="Ayuda" />
+                        <SidebarItem icon={<CircleHelp size={20}/>} text="Empresa" />
                     </SidebarContext.Provider>
                     </div>
                 </nav>

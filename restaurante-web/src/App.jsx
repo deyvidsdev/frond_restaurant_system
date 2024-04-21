@@ -1,6 +1,6 @@
 import './App.css'
 import { createContext, useContext, useState, useEffect } from 'react'
-import { ClipboardList, Coffee, Folder, LayoutDashboard, Pencil, ShoppingCart, ToggleLeft, Users } from "lucide-react"
+import { ClipboardList, Coffee, Folder, LayoutDashboard, Pencil, ShoppingCart, ToggleLeft, Users, Bolt, CircleHelp } from "lucide-react"
 import Sidebar, { SidebarItem } from './components/Sidebar'
 import MainContent from './components/MainContent'
 import DashboardContent from './components/DashboardContent'
@@ -10,8 +10,9 @@ import CategoriasContent from './components/CategoriasContent'
 import InsumosContent from './components/InsumosContent'
 import UsuariosContent from './components/UsuariosContent'
 import SalasContent from './components/SalasContent'
+import AjustesContent from './components/AjustesContent'
+import AyudaContent from './components/AyudaContent'
 import useTheme from './hook/useTheme'
-import { ThemeProvider } from './context/ThemeProvider'
 
 
 
@@ -19,7 +20,7 @@ import { ThemeProvider } from './context/ThemeProvider'
 function App() {
 
   //Estado poner activo el elemento y cambiar el contenido
-  const [content, setContent] = useState("Categorias")
+  const [content, setContent] = useState("Ordenes")
   const contentMap = {
     Dashboard: <DashboardContent/>,
     Ventas: <VentasContent/>,
@@ -27,7 +28,9 @@ function App() {
     Categorias: <CategoriasContent/>,
     Insumos: <InsumosContent/>,
     Usuarios: <UsuariosContent />,
-    Salas: <SalasContent/>
+    Salas: <SalasContent/>,
+    Ajustes: <AjustesContent/>,
+    Ayuda: <AyudaContent/>
   };
 
   const handleContentClick = (text) => {
@@ -51,6 +54,8 @@ function App() {
           <SidebarItem icon={<Coffee size={20}/>} text="Insumos" active={content === "Insumos"} onClick={() => handleContentClick("Insumos")}/>
           <SidebarItem icon={<Users size={20}/>} text="Usuarios" active={content === "Usuarios"} onClick={() => handleContentClick("Usuarios")}/>
           <SidebarItem icon={<Pencil size={20}/>} text="Salas" active={content === "Salas"} onClick={() => handleContentClick("Salas")}/>
+          <SidebarItem icon={<Bolt size={20}/>} text="Ajustes" active={content === "Ajustes"} onClick={() => handleContentClick("Ajustes")} />
+          <SidebarItem icon={<CircleHelp size={20}/>} text="Ayuda" active={content === "Ayuda"} onClick={() => handleContentClick("Ayuda")}/>
         </Sidebar>
         
         <section className={`w-full min-h-screen bg-gray-50 dark:bg-gray-800`}>

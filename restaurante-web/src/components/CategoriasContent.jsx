@@ -1,4 +1,4 @@
-import DataTable from "../view/DataTable";
+import DataTableCategorias from "../view/DataTableCategorias";
 import Header from "./Header";
 import Main from "./Main";
 
@@ -8,7 +8,7 @@ export default function CategoriasContent() {
             <Header text="Categorias" icon>
             </Header>
             <Main>
-                <DataTable></DataTable>
+                <DataTableCategorias></DataTableCategorias>
             </Main>
         </>
     )
