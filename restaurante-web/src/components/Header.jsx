@@ -10,8 +10,9 @@ export default function Header({text, icon}) {
         toggleTheme()
         setIsMoonIcon(!isMoonIcon)
     }
+    const { theme } = useTheme()
     return(
-        <header className="flex justify-between w-full pt-8 pl-12 pr-12 ">
+        <header className={`flex justify-between w-full pt-8 pl-12 pr-12 ${theme} dark:bg-gray-800`}>
             <div>
                 <p className="text-sm text-indigo-700 dark:text-gray-300">Pages/{text}</p>
                 <h2 className="text-3xl text-blue-800 font-semibold mt-1 dark:text-gray-300">{text}</h2>
