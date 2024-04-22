@@ -11,30 +11,34 @@ import UsuariosContent from './UsuariosContent'
 import SalasContent from './SalasContent'
 import AjustesContent from './AjustesContent'
 import AyudaContent from './AyudaContent'
+import MesasContent from './MesasContent'
 import useTheme from '../hook/useTheme'
 
 
 export default function MainApp() {
 
     //Estado poner activo el elemento y cambiar el contenido
-    const [content, setContent] = useState("Dashboard")
+    const [content, setContent] = useState("Salas")
+    const handleContentClick = (text) => {
+        if(text !== content) {
+        setContent(text)
+        }
+    }
+    
     const contentMap = {
         Dashboard: <DashboardContent/>,
-        Ventas: <VentasContent/>,
+        Ventas: <VentasContent handleContentClick={handleContentClick}/>,
         Ordenes: <OrdenesContent/>,
         Categorias: <CategoriasContent/>,
         Insumos: <InsumosContent/>,
         Usuarios: <UsuariosContent />,
         Salas: <SalasContent/>,
         Ajustes: <AjustesContent/>,
-        Ayuda: <AyudaContent/>
+        Ayuda: <AyudaContent/>,
+        Mesas: <MesasContent/>
     };
 
-    const handleContentClick = (text) => {
-        if(text !== content) {
-        setContent(text)
-        }
-    }
+    
 
     const { theme } = useTheme()
 

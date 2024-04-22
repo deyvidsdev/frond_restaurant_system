@@ -1,3 +1,4 @@
+import SimpleBarChart from "../view/SimpleBarChart"
 import Header from "./Header"
 import Main from "./Main"
 export default function DashboardContent() {
@@ -5,8 +6,12 @@ export default function DashboardContent() {
         <>
             <Header text="Dashboard" icon>
             </Header>
-            <Main>
-            </Main>
+            <div className="grid grid-cols-2 w-full ">
+                <SimpleBarChart/>
+                <SimpleBarChart/>
+                <SimpleBarChart/>
+                <SimpleBarChart/>
+            </div>
         </>
     )
 }
