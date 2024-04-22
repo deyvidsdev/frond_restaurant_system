@@ -18,13 +18,13 @@ import useTheme from '../hook/useTheme'
 export default function MainApp() {
 
     //Estado poner activo el elemento y cambiar el contenido
-    const [content, setContent] = useState("Salas")
+    const [content, setContent] = useState("Dashboard")
     const handleContentClick = (text) => {
         if(text !== content) {
         setContent(text)
         }
     }
-    
+
     const contentMap = {
         Dashboard: <DashboardContent/>,
         Ventas: <VentasContent handleContentClick={handleContentClick}/>,
