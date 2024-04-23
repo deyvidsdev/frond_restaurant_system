@@ -11,8 +11,7 @@ export default function Sidebar ({children}) {
             <aside className="h-screen sticky top-0">
                 <nav className="h-full flex flex-col bg-white dark:bg-gray-800 border-r dark:border-gray-700 shadow-sm">
                     <div className={`px-5 py-5 flex items-center border-b dark:border-gray-700 ${expanded ? "justify-between" : "justify-start"}`}>
-                        <h1 className={`text-2xl text-center text-red-600 dark:text-gray-200 font-bold overflow-hidden transition-all ${expanded ? "w-32" : "w-0"} flex items-center justify-center`}>
-                            <img className="" src="../../public/gordito.png" alt="" style={{ width: "50px", height: "50px" }} />
+                        <h1 className={`text-2xl text-center text-blue-900 dark:text-gray-200 font-bold overflow-hidden transition-all ${expanded ? "w-32" : "w-0"} flex items-center justify-center`}>
                             Central
                         </h1>
                         <button onClick={() => setExpanded((curr) => !curr)} className="bg-gray-100 py-1 px-0.5 rounded-md">
