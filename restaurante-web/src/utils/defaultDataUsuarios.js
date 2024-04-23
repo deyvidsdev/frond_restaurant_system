@@ -1,44 +1,44 @@
 export const defaultDataUsuarios = [
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
+        Nombre: 'Juan',
+        Correo: 'juan@example.com',
+        Dirección: 'Calle Principal 123',
+        Celular: '123456789',
+        Rol: 'Administrador'
     },
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
+        Nombre: 'María',
+        Correo: 'maria@example.com',
+        Dirección: 'Avenida Central 456',
+        Celular: '987654321',
+        Rol: 'Usuario'
     },
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
+        Nombre: 'Pedro',
+        Correo: 'pedro@example.com',
+        Dirección: 'Plaza Mayor 789',
+        Celular: '456789123',
+        Rol: 'Mesero'
     },
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
+        Nombre: 'Laura',
+        Correo: 'laura@example.com',
+        Dirección: 'Paseo del Sol 567',
+        Celular: '321654987',
+        Rol: 'Usuario'
     },
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
+        Nombre: 'Diego',
+        Correo: 'diego@example.com',
+        Dirección: 'Avenida del Bosque 890',
+        Celular: '789123456',
+        Rol: 'Mesero'
     },
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
+        Nombre: 'Ana',
+        Correo: 'ana@example.com',
+        Dirección: 'Calle Flores 234',
+        Celular: '654987321',
+        Rol: 'Usuario'
     },
-]
+];

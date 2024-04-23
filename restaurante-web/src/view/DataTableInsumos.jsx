@@ -15,19 +15,19 @@ export default function DataTableInsumos() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripción'
         },
         {
-            accessorKey: 'category'
+            accessorKey: 'Categoria'
         },
         {
-            accessorKey: 'code'
+            accessorKey: 'Codigo'
         },
         {
-            accessorKey: 'price'
+            accessorKey: 'Precio'
         },
         {
             accessorKey: ' ',

@@ -15,19 +15,19 @@ export default function DataTableOrdenes() {
             )
         },
         {
-            accessorKey: 'insume'
+            accessorKey: 'Insumos'
         },
         {
-            accessorKey: 'quantity'
+            accessorKey: 'Cantidad'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripción'
         },
         {
-            accessorKey: 'waiter'
+            accessorKey: 'Mesero'
         },
         {
-            accessorKey: 'table'
+            accessorKey: 'Estado'
         },
         
         

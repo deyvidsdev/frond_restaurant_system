@@ -15,19 +15,19 @@ export default function DefaultDataUsuarios() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'email'
+            accessorKey: 'Correo'
         },
         {
-            accessorKey: 'address'
+            accessorKey: 'Dirección'
         },
         {
-            accessorKey: 'phone'
+            accessorKey: 'Celular'
         },
         {
-            accessorKey: 'rol'
+            accessorKey: 'Rol'
         },
         {
             accessorKey: ' ',

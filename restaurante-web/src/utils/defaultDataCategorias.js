@@ -1,144 +1,82 @@
 export const defaultDataCategorias = [
     {
-        name: 'Tanner',
-        description: 'sdasdasd'
+        Nombre: 'Pizzas',
+        Descripción: 'Deliciosas pizzas con una variedad de ingredientes y sabores para todos los gustos.'
     },
     {
-        name: 'Marcus',
-        description: 'sdasdasd'
+        Nombre: 'Hamburguesas',
+        Descripción: 'Sabrosas hamburguesas preparadas con carne de primera calidad y acompañadas de deliciosos ingredientes.'
     },
     {
-        name: 'Bertha',
-        description: 'sdasdasd'
+        Nombre: 'Tacos',
+        Descripción: 'Auténticos tacos mexicanos con una variedad de rellenos y salsas para disfrutar de un festín de sabores.'
     },
     {
-        name: 'Martha',
-       description: 'sdasdasd'
+        Nombre: 'Sushi',
+        Descripción: 'Exquisito sushi fresco preparado con los mejores ingredientes y presentado de manera artística.'
     },
     {
-        name: 'Luis',
-        description: 'sdasdasd'
+        Nombre: 'Ensaladas',
+        Descripción: 'Ensaladas frescas y saludables con una combinación de ingredientes naturales y aderezos deliciosos.'
     },
     {
-        name: 'Jerom',
-        description: 'sdasdasd'
+        Nombre: 'Pastas',
+        Descripción: 'Pastas caseras preparadas al dente y acompañadas de una variedad de salsas irresistibles.'
     },
     {
-        name: 'Clara',
-        description: 'sdasdasd'
+        Nombre: 'Comida china',
+        Descripción: 'Platos tradicionales de la cocina china con una mezcla única de sabores y texturas.'
     },
     {
-        name: 'Lei',
-        description: 'sdasdasd'
+        Nombre: 'Comida tailandesa',
+        Descripción: 'Platos picantes y aromáticos de la cocina tailandesa que te transportarán a oriente con cada bocado.'
     },
     {
-        name: 'Lei',
-        description: 'sdasdasd'
+        Nombre: 'Comida mexicana',
+        Descripción: 'Auténticos platillos mexicanos llenos de sabor y tradición, desde tacos hasta enchiladas y mucho más.'
     },
     {
-        name: 'Luis',
-        description: 'sdasdasd'
+        Nombre: 'Comida italiana',
+        Descripción: 'Deliciosas opciones de la cocina italiana, desde pasta y pizza hasta risotto y antipasti.'
     },
     {
-        name: 'Jerom',
-        description: 'sdasdasd'
+        Nombre: 'Comida india',
+        Descripción: 'Platos especiados y aromáticos de la cocina india que te sorprenderán con su variedad de sabores.'
     },
     {
-        name: 'Pedro',
-        description: 'sdasdasd'
+        Nombre: 'Comida japonesa',
+        Descripción: 'Auténtica comida japonesa, incluyendo sushi, sashimi, tempura y mucho más, preparada con maestría.'
     },
     {
-        name: 'Tanner',
-        description: 'sdasdasd'
+        Nombre: 'Comida árabe',
+        Descripción: 'Sabrosos platos de la cocina árabe, desde kebabs y falafel hasta hummus y tabbouleh.'
     },
     {
-        name: 'Marcus',
-        description: 'sdasdasd'
+        Nombre: 'Comida francesa',
+        Descripción: 'Elegantes platillos de la cocina francesa, conocida por su sofisticación y exquisitez.'
     },
     {
-        name: 'Bertha',
-        description: 'sdasdasd'
+        Nombre: 'Comida griega',
+        Descripción: 'Delicias mediterráneas de la cocina griega, como gyros, moussaka, souvlaki y más.'
     },
     {
-        name: 'Martha',
-        lastName: 'Gordom',
-        age: 18,
-        status: 'Inactivo',
+        Nombre: 'Comida española',
+        Descripción: 'Platos tradicionales españoles, desde paella y tapas hasta gazpacho y tortilla de patatas.'
     },
     {
-        name: 'Luis',
-        description: 'sdasdasd'
+        Nombre: 'Comida brasileña',
+        Descripción: 'Sabores tropicales de la cocina brasileña, con platos como feijoada, moqueca y coxinha.'
     },
     {
-        name: 'Jerom',
-        description: 'sdasdasd'
+        Nombre: 'Comida argentina',
+        Descripción: 'Deliciosos cortes de carne argentinos, empanadas, choripanes y otros platos típicos de Argentina.'
     },
     {
-        name: 'Clara',
-        description: 'sdasdasd'
+        Nombre: 'Comida peruana',
+        Descripción: 'Sabores únicos de la cocina peruana, incluyendo ceviche, lomo saltado, causa y más.'
     },
     {
-        name: 'Lei',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Lei',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Luis',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Jerom',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Pedro',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Pedro',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Pedro',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Jerom',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Clara',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Lei',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Lei',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Luis',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Jerom',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Pedro',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Pedro',
-        description: 'sdasdasd'
-    },
-    {
-        name: 'Pedro',
-        description: 'sdasdasd'
-    },
-]
+        Nombre: 'Comida colombiana',
+        Descripción: 'Platos tradicionales de la cocina colombiana, como bandeja paisa, arepas, sancocho y más.'
+    }
+];

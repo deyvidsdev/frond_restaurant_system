@@ -15,13 +15,13 @@ export default function DefaultDataSalas() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'table'
+            accessorKey: 'Mesas'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripción'
         },
         {
             accessorKey: ' ',

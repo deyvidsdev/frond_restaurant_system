@@ -33,8 +33,8 @@ export default function MainApp() {
         Insumos: <InsumosContent/>,
         Usuarios: <UsuariosContent />,
         Salas: <SalasContent/>,
-        Ajustes: <AjustesContent/>,
-        Ayuda: <AyudaContent/>,
+        // Ajustes: <AjustesContent/>,
+        // Ayuda: <AyudaContent/>,
         Mesas: <MesasContent/>
     };
 
@@ -54,8 +54,8 @@ export default function MainApp() {
         <SidebarItem icon={<Coffee size={20}/>} text="Insumos" active={content === "Insumos"} onClick={() => handleContentClick("Insumos")}/>
         <SidebarItem icon={<Users size={20}/>} text="Usuarios" active={content === "Usuarios"} onClick={() => handleContentClick("Usuarios")}/>
         <SidebarItem icon={<Pencil size={20}/>} text="Salas" active={content === "Salas"} onClick={() => handleContentClick("Salas")}/>
-        <SidebarItem icon={<Bolt size={20}/>} text="Ajustes" active={content === "Ajustes"} onClick={() => handleContentClick("Ajustes")} />
-        <SidebarItem icon={<CircleHelp size={20}/>} text="Ayuda" active={content === "Ayuda"} onClick={() => handleContentClick("Ayuda")}/>
+        {/* <SidebarItem icon={<Bolt size={20}/>} text="Ajustes" active={content === "Ajustes"} onClick={() => handleContentClick("Ajustes")} /> */}
+        {/* <SidebarItem icon={<CircleHelp size={20}/>} text="Ayuda" active={content === "Ayuda"} onClick={() => handleContentClick("Ayuda")}/> */}
         </Sidebar>
         <section className={`w-full min-h-screen bg-gray-50 dark:bg-gray-800`}>
         {contentMap[content]}

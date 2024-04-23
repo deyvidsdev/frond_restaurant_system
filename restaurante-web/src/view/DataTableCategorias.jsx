@@ -15,10 +15,10 @@ export default function DataTableCategorias() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripción'
         },
         {
             accessorKey: ' ',

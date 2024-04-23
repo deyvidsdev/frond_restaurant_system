@@ -6,7 +6,7 @@ export default function DashboardContent() {
         <>
             <Header text="Dashboard" icon>
             </Header>
-            <div className="grid grid-cols-2 w-full ">
+            <div className="grid grid-cols-2 w-full pt-20">
                 <SimpleBarChart/>
                 <SimpleBarChart/>
                 <SimpleBarChart/>
