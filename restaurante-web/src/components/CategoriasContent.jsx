@@ -5,7 +5,7 @@ import Main from "./Main";
 export default function CategoriasContent() {  
     return (
         <>
-            <Header text="Categorias" icon>
+            <Header text2="Pages / " text="Categorias" icon>
             </Header>
             <Main>
                 <DataTableCategorias></DataTableCategorias>

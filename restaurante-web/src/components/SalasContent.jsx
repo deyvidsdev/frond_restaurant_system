@@ -5,7 +5,7 @@ import DataTableSalas from "../view/DataTableSalas";
 export default function SalasContent() {  
     return (
         <>
-            <Header text="Salas" icon>
+            <Header text2="Pages / " text="Salas" icon>
             </Header>
             <Main>
                 <DataTableSalas>

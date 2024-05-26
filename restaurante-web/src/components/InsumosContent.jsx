@@ -5,7 +5,7 @@ import DataTableInsumos from "../view/DataTableInsumos";
 export default function InsumosContent() {
     return (
         <>
-            <Header text="Insumos" icon>
+            <Header text2="Pages / " text="Platos" icon>
             </Header>
             <Main>
                 <DataTableInsumos></DataTableInsumos>

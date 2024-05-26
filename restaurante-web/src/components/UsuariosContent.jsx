@@ -5,11 +5,11 @@ import Main from "./Main";
 export default function UsuariosContent() {
     return(
         <>
-            <Header text="Usuarios" icon>
+            <Header text2="Pages / " text="Usuarios" icon>
             </Header>
             <Main>
                 <DataTableUsuarios>
-
+                  
                 </DataTableUsuarios>
             </Main>
         </>

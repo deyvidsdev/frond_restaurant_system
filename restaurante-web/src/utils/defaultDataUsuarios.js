@@ -1,44 +1,9 @@
 export const defaultDataUsuarios = [
     {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
-    },
-    {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
-    },
-    {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
-    },
-    {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
-    },
-    {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
-    },
-    {
-        name: 'Tanner',
-        email: 12,
-        address: 'sdasdasd',
-        phone: 'Juan',
-        rol: 'active'
-    },
+        Nombre: 'Tanner',
+        Email: 'tanner123@gmail.com',
+        Direccion: 'sdasdasd',
+        Telefono: '987558092',
+        Rol: 'Administrador'
+    }
 ]

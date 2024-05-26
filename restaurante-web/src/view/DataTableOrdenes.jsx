@@ -1,11 +1,16 @@
 import { flexRender, getCoreRowModel, useReactTable, getPaginationRowModel } from '@tanstack/react-table'
 import { useState } from 'react'
-import { defaultDataOrdenes } from '../utils/defaultDataOrdenes'
-import { Pencil, Trash2, Info} from 'lucide-react'
+import defaultDataOrdenes from '../utils/defaultDataOrdenes.json'
 import classNames from 'classnames'
+import Modal from './ModalOrdenes'
 
 export default function DataTableOrdenes() {
     const [data, setData] = useState(defaultDataOrdenes)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const handleAddOrder = (order) => {
+      setData(prevData => [...prevData, order])
+    }
 
     const columns = [
         {
@@ -15,19 +20,19 @@ export default function DataTableOrdenes() {
             )
         },
         {
-            accessorKey: 'insume'
+            accessorKey: 'Orden'
         },
         {
-            accessorKey: 'quantity'
+            accessorKey: 'Cantidad'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripcion'
         },
         {
-            accessorKey: 'waiter'
+            accessorKey: 'Mozo'
         },
         {
-            accessorKey: 'table'
+            accessorKey: 'Estado'
         },
         
         
@@ -41,9 +46,11 @@ export default function DataTableOrdenes() {
     })
 
     return (
-        
-
-            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gray-700 dark:text-gray-200'>
+            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gris-oscuro dark:text-gray-200'>
+              <div>
+                  <button className='bg-gray-300 px-3 py-1 mb-3 text-gray-600 font-semibold' onClick={() => setIsModalOpen(true)}>Añadir orden</button>
+                  <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onAddOrder={handleAddOrder}/>
+              </div>
                 <table className='table-auto border border-gray-200 dark:border-gray-500 w-full ' >
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (
@@ -66,7 +73,7 @@ export default function DataTableOrdenes() {
                         {table.getRowModel().rows.map(row => (
                             <tr key={row.id} className='border border-gray-200 dark:border-gray-500'>
                                 {row.getVisibleCells().map((cell, index) => (
-                                    <td key={cell.id} className= {`py-4 pl-3 pr-4 dark:text-gray-200 ${cell.getValue() === 'active' ? 'text-green-400 font-semibold dark:text-green-400' : 'dark:text-gray-200'}
+                                    <td key={cell.id} className= {`py-4 pl-3 pr-4 max-w-40 dark:text-gray-200 ${cell.getValue() === 'active' ? 'text-green-400 font-semibold dark:text-green-400' : 'dark:text-gray-200'}
                                     ${cell.getValue() === 'offline' ? 'text-gray-800 font-semibold dark:text-gray-800' : 'dark:text-gray-200'}
                                     ${cell.getValue() === 'wait' ? 'text-yellow-600 font-semibold dark:text-yellow-500 ' : 'dark:text-gray-200'}
                                     ${index === row.getVisibleCells().length - 1  ? 'text-right pr-4' : ''} `} >

@@ -1,42 +1,8 @@
 export const defaultDataSalas = [
     {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },
-    {
-        name: 'Tanner',
-        table: 12,
-        description: 'sdasdasd',
-    },    
+        Nombre: 'Sala 1',
+        Mesa: 2,
+        Descripcion: 'sdasdasd',
+    }
+      
 ]

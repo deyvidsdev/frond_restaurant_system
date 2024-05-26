@@ -3,9 +3,15 @@ import { useState } from 'react'
 import { defaultDataUsuarios } from '../utils/defaultDataUsuarios'
 import { Pencil, Trash2, Info} from 'lucide-react'
 import classNames from 'classnames'
+import Modal from './ModalUsuarios'
 
 export default function DefaultDataUsuarios() {
     const [data, setData] = useState(defaultDataUsuarios)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const handleAddOrder = (order) => {
+      setData(prevData => [...prevData, order])
+    }
 
     const columns = [
         {
@@ -15,19 +21,19 @@ export default function DefaultDataUsuarios() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'email'
+            accessorKey: 'Email'
         },
         {
-            accessorKey: 'address'
+            accessorKey: 'Direccion'
         },
         {
-            accessorKey: 'phone'
+            accessorKey: 'Telefono'
         },
         {
-            accessorKey: 'rol'
+            accessorKey: 'Rol'
         },
         {
             accessorKey: ' ',
@@ -58,7 +64,11 @@ export default function DefaultDataUsuarios() {
     return (
         
 
-            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gray-700 dark:text-gray-200'>
+            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gris-oscuro dark:text-gray-200'>
+              <div>
+                  <button className='bg-gray-300 px-3 py-1 mb-3 text-gray-600 font-semibold' onClick={() => setIsModalOpen(true)}>Añadir usuario</button>
+                  <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onAddOrder={handleAddOrder}/>
+              </div>
                 <table className='table-auto border border-gray-200 dark:border-gray-500 w-full ' >
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (

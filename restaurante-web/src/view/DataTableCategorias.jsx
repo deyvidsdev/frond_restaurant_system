@@ -3,10 +3,15 @@ import { useState } from 'react'
 import { defaultDataCategorias } from '../utils/defaultDataCategorias'
 import { Pencil, Trash2, Info} from 'lucide-react'
 import classNames from 'classnames'
+import Modal from './ModalCategorias'
 
 export default function DataTableCategorias() {
     const [data, setData] = useState(defaultDataCategorias)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
+    const handleAddOrder = (order) => {
+      setData(prevData => [...prevData, order])
+    }
     const columns = [
         {
             accessorKey: '  ',
@@ -15,10 +20,10 @@ export default function DataTableCategorias() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripcion'
         },
         {
             accessorKey: ' ',
@@ -49,7 +54,11 @@ export default function DataTableCategorias() {
     return (
         
 
-            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gray-700 dark:text-gray-200'>
+            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gris-oscuro dark:text-gray-200'>
+              <div>
+                  <button className='bg-gray-300 px-3 py-1 mb-3 text-gray-600 font-semibold' onClick={() => setIsModalOpen(true)}>Añadir categoria</button>
+                  <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onAddOrder={handleAddOrder}/>
+              </div>
                 <table className='table-auto border border-gray-200 dark:border-gray-500 w-full ' >
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (

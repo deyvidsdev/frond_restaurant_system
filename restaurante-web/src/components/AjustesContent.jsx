@@ -4,7 +4,7 @@ import Main from "./Main";
 export default function AjustesContent() {
     return(
         <>
-            <Header text="Ajustes" icon>
+            <Header text2="Pages / " text="Ajustes" icon>
                 
             </Header>
             <Main></Main>

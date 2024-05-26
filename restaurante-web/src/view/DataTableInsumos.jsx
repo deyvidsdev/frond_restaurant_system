@@ -3,9 +3,15 @@ import { useState } from 'react'
 import { defaultDataInsumos } from '../utils/defaultDataInsumos'
 import { Pencil, Trash2, Info} from 'lucide-react'
 import classNames from 'classnames'
+import Modal from './ModalPlatos'
 
 export default function DataTableInsumos() {
     const [data, setData] = useState(defaultDataInsumos)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const handleAddOrder = (order) => {
+      setData(prevData => [...prevData, order])
+    }
 
     const columns = [
         {
@@ -15,19 +21,19 @@ export default function DataTableInsumos() {
             )
         },
         {
-            accessorKey: 'name'
+            accessorKey: 'Nombre'
         },
         {
-            accessorKey: 'description'
+            accessorKey: 'Descripcion'
         },
         {
-            accessorKey: 'category'
+            accessorKey: 'Categoria'
         },
         {
-            accessorKey: 'code'
+            accessorKey: 'Codigo'
         },
         {
-            accessorKey: 'price'
+            accessorKey: 'Precio'
         },
         {
             accessorKey: ' ',
@@ -58,7 +64,11 @@ export default function DataTableInsumos() {
     return (
         
 
-            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gray-700 dark:text-gray-200'>
+            <div className=' py-6 px-7 w-full flex flex-col rounded-lg overflow-hidden bg-white dark:bg-gris-oscuro dark:text-gray-200'>
+              <div>
+                  <button className='bg-gray-300 px-3 py-1 mb-3 text-gray-600 font-semibold' onClick={() => setIsModalOpen(true)}>Añadir plato</button>
+                  <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onAddOrder={handleAddOrder}/>
+              </div>
                 <table className='table-auto border border-gray-200 dark:border-gray-500 w-full ' >
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (

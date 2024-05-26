@@ -4,7 +4,7 @@ import Main from "./Main";
 export default function AyudaContent() {
     return(
         <>
-            <Header text="Ayuda" icon>
+            <Header text2="Pages / " text="Ayuda" icon>
             </Header>
             <Main>
             </Main>

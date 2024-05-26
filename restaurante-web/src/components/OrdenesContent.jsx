@@ -5,7 +5,7 @@ import DataTableOrdenes from "../view/DataTableOrdenes";
 export default function OrdenesContent() {
     return(
         <>
-            <Header text="Ordenes" icon>
+            <Header text2="Pages / " text="Ordenes" icon>
             </Header>
             <Main>
                 <DataTableOrdenes></DataTableOrdenes>
