@@ -1,4 +1,4 @@
-import DataTableUsuarios from "../view/DataTableUsuarios";
+import DataTableUsuarios from "../view/DataTables/DataTableUsuarios";
 import Header from "./Header";
 import Main from "./Main";
 

@@ -1,4 +1,4 @@
-import DataTableCategorias from "../view/DataTableCategorias";
+import DataTableCategorias from "../view/DataTables/DataTableCategorias";
 import Header from "./Header";
 import Main from "./Main";
 

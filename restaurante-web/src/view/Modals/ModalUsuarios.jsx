@@ -3,11 +3,11 @@ import { useState } from 'react'
 /* eslint-disable react/prop-types */
 export default function Modal({ isOpen, onClose, onAddOrder}) {
   const [form, setForm] = useState({
-      Nombre: '',
-      Email: '',
-      Direccion: '',
-      Telefono: '',
-      Rol: ''
+      name: '',
+      email: '',
+      password: '',
+      phone: '',
+      role: ''
   });
 
   const handleChange = (e) => {
@@ -22,11 +22,11 @@ export default function Modal({ isOpen, onClose, onAddOrder}) {
     e.preventDefault()
     onAddOrder(form)
     setForm({
-      Nombre: '',
-      Email: '',
-      Direccion: '',
-      Telefono: '',
-      Rol: ''
+      name: '',
+      email: '',
+      password: '',
+      phone: '',
+      role: ''
     })
   }
 
@@ -39,14 +39,14 @@ export default function Modal({ isOpen, onClose, onAddOrder}) {
         <div className="modal-content bg-white rounded shadow-lg p-6 max-w-sm mx-auto">
             <h2 className="text-center mb-4 text-xl font-semibold dark:text-negro-claro">Añadir usuario</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="Nombre" value={form.Nombre} onChange={handleChange} placeholder="Nombre" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
-                <input type="text" name="Email" value={form.Email} onChange={handleChange} placeholder="Email" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
-                <input type="text" name="Direccion" value={form.Direccion} onChange={handleChange} placeholder="Direccion" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
-                <input type="text" name="Telefono" value={form.Telefono} onChange={handleChange} placeholder="Telefono" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
-                <select name="Rol" value={form.Rol} onChange={handleChange} className="mb-2 p-2 w-full border rounded dark:text-negro-claro">
+                <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Nombre" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
+                <input type="text" name="email" value={form.email} onChange={handleChange} placeholder="Email" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
+                <input type="password" name="password" value={form.password} onChange={handleChange} placeholder="Contraseña" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
+                <input type="text" name="phone" value={form.phone} onChange={handleChange} placeholder="Telefono" className="mb-2 p-2 w-full border rounded dark:text-negro-claro" />
+                <select name="role" value={form.role} onChange={handleChange} className="mb-2 p-2 w-full border rounded dark:text-negro-claro">
                     <option value="">Roles...</option>
-                    <option value="mozo">Mozo</option>
-                    <option value="administrador">Administrador</option>
+                    <option value="ROLE_ADMINISTRATOR">ROLE_ADMINISTRATOR</option>
+                    <option value="ROLE_WAITER">ROLE_WAITER</option>
                 </select>
                 <button type="submit" className="block w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-4">Añadir</button>
             </form>

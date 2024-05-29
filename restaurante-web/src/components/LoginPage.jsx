@@ -20,10 +20,10 @@ export default function LoginPage() {
 
     return(
         <>
-        <div className={`${theme} `}>
+        <div className={`${theme} h-screen flex flex-col`}>
             <Header icon>
             </Header>
-            <div className={`flex h-screen justify-center items-center dark:bg-negro-claro`} >
+            <div className={`flex flex-grow justify-center items-center dark:bg-negro-claro`} >
                 <div className="w-96 h-96 bg-white dark:bg-negro-claro rounded-lg shadow-lg flex flex-col items-center justify-center p-4 ">
                     <h1 className="text-3xl font-bold text-blue-900 dark:text-white mb-10">Central Panel</h1>
                     <form className="w-full mt-4" onSubmit={handleClick}>

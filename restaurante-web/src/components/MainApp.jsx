@@ -4,9 +4,9 @@ import DashboardContent from './DashboardContent'
 import VentasContent from './VentasContent'
 import OrdenesContent from './OrdenesContent'
 import CategoriasContent from './CategoriasContent'
-import InsumosContent from './InsumosContent'
+import PlatosContent from './PlatosContent'
 import UsuariosContent from './UsuariosContent'
-import SalasContent from './SalasContent'
+import PisosContent from './PisosContent'
 import AjustesContent from './AjustesContent'
 import AyudaContent from './AyudaContent'
 import MesasContent from './MesasContent'
@@ -30,9 +30,9 @@ export default function MainApp() {
         <SidebarItem icon={<ShoppingCart size={20}/>} text="Ventas" active={isActive("/ventas")} onClick={() => navigate("/ventas")}/>
         <SidebarItem icon={<ClipboardList size={20}/>} text="Ordenes" active={isActive("/ordenes")} onClick={() => navigate("/ordenes")}/>
         <SidebarItem icon={<Folder size={20}/>} text="Categorias" active={isActive("/categorias")} onClick={() => navigate("/categorias")}/>
-        <SidebarItem icon={<Coffee size={20}/>} text="Insumos" active={isActive("/insumos")} onClick={() => navigate("/insumos")}/>
+        <SidebarItem icon={<Coffee size={20}/>} text="Platos" active={isActive("/platos")} onClick={() => navigate("/platos")}/>
         <SidebarItem icon={<Users size={20}/>} text="Usuarios" active={isActive("/usuarios")} onClick={() => navigate("/usuarios")}/>
-        <SidebarItem icon={<Pencil size={20}/>} text="Salas" active={isActive("/salas")} onClick={() => navigate("/salas")}/>
+        <SidebarItem icon={<Pencil size={20}/>} text="Pisos" active={isActive("/pisos")} onClick={() => navigate("/pisos")}/>
         <SidebarItem icon={<Bolt size={20}/>} text="Ajustes" active={isActive("/ajustes")} onClick={() => navigate("/ajustes")} />
         <SidebarItem icon={<CircleHelp size={20}/>} text="Ayuda" active={isActive("/ayuda")} onClick={() => navigate("/ayuda")}/>
         </Sidebar>
@@ -43,9 +43,9 @@ export default function MainApp() {
                 <Route path="/ventas" element={<VentasContent/>} />
                 <Route path="/ordenes" element={<OrdenesContent/>} />
                 <Route path="/categorias" element={<CategoriasContent/>} />
-                <Route path="/insumos" element={<InsumosContent/>} />
+                <Route path="/platos" element={<PlatosContent/>} />
                 <Route path="/usuarios" element={<UsuariosContent/>} />
-                <Route path="/salas" element={<SalasContent/>} />
+                <Route path="/pisos" element={<PisosContent/>} />
                 <Route path="/ajustes" element={<AjustesContent/>} />
                 <Route path="/ayuda" element={<AyudaContent/>} />
                 <Route path="/mesas" element={<MesasContent/>} />

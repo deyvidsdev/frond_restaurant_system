@@ -12,7 +12,7 @@ export default function Header({text, text2, icon}) {
     }
     const { theme } = useTheme()
     return(
-        <header className={`flex justify-between w-full pt-8 pl-12 pr-12 ${theme} dark:bg-negro-claro`}>
+        <header className={`flex justify-between w-full pt-8 pb-10 px-14  ${theme} dark:bg-negro-claro`}>
             <div>
                 <p className="text-sm text-negro-claro dark:text-white">{text2}{text}</p>
                 <h2 className="text-3xl text-negro-claro font-semibold mt-1 dark:text-white">{text}</h2>

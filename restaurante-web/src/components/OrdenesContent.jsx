@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Main from "./Main";
-import DataTableOrdenes from "../view/DataTableOrdenes";
+import DataTableOrdenes from "../view/DataTables/DataTableOrdenes";
 
 export default function OrdenesContent() {
     return(
