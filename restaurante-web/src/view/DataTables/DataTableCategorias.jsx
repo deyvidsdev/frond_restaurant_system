@@ -38,7 +38,7 @@ function DataTableCategorias() {
     }
   };
 
-  {/*Listar ordenes*/}
+  {/*Eliminar ordenes*/}
   const deleteOrder = async (id) => {
     const response = await fetch(`https://backend-restaurante.deyvids.dev/api/v1/Category/Delete/${id}`, {
       method: 'DELETE',
@@ -58,11 +58,11 @@ function DataTableCategorias() {
   console.log(currentPage)
 
   const handlePageClick = (page) => {
-    setCurrentPage(page);
+    setCurrentPage(page)
   }
 
   const handleClickOpenModal = () => {
-    setIsModalOpen(true);
+    setIsModalOpen(true)
   }
 
   const pageNumbers = Array.from({ length: Math.min(totalPages, 5) }, (_, i) => i);
