@@ -7,6 +7,7 @@ import useTheme from '../hook/useTheme'
 export default function LoginPage() {
 
   const [username,setUsername] = useState('')
+  const [errorText, setErrorText] = useState('')
 
   const userRoles = {
       admin: 'admin',
@@ -18,6 +19,10 @@ export default function LoginPage() {
 
   const handleClick = (event) => {
       event.preventDefault();
+
+      setErrorText('')
+
+
       const role = userRoles[username]
       if(role){
         login(role);
@@ -27,8 +32,16 @@ export default function LoginPage() {
           navigate('/ventas')
         }
       }else {
-        console.error('Nombre de usuario no valido')
+        const isEmpty = username.trim() === ''
+        if(isEmpty){
+          setErrorText('Por favor rellene todos los campos')
+          return
+        }else if(role !== 'admin' || role !== 'mesero1'){
+          setErrorText('Nombre de usuario no valido')
+          return
+        }
       }
+
   }
 
   const { theme } = useTheme()
@@ -44,6 +57,7 @@ export default function LoginPage() {
                   <form className="w-full mt-4" onSubmit={handleClick}>
                       <input type="text" placeholder="Usuario" value={username} onChange={e => setUsername(e.target.value)} className="w-full px-3 py-2  border border-gray-300 dark:border-gray-500 dark:bg-negro-claro rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700 dark:focus:ring-white focus:border-transparent"/>
                       <input type="password" placeholder="Contraseña" className="w-full mt-4 px-3 py-2 border border-gray-300 dark:border-gray-500 dark:bg-negro-claro rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700 dark:focus:ring-white focus:border-transparent"/>
+                      {errorText && <p className='text-red-700'>{errorText}</p>}
                       <button  type="submit" className="w-full mt-10 bg-blue-900 dark:bg-blue-600 dark:font-semibold text-white py-2 rounded-md hover:bg-blue-800">Iniciar Sesión</button>
                   </form>
               </div>

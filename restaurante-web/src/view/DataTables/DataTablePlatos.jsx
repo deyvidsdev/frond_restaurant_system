@@ -1,17 +1,17 @@
 import React from 'react';
 import { useState, useEffect, useCallback } from 'react';
-import Modal from '../Modals/ModalPlatos';
+import Modal from '../ModalsCreate/ModalPlatos';
+import ModalUpdatePlatos from '../ModalsUpdate/ModalUpdatePlatos';
+import { Trash2, Pencil } from 'lucide-react'
 
 function DataTablePlatos() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [totalPages, setTotalPages] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDishId, setSelectedDishId] = useState(null);
 
-  const handleClickOpenModal = () => {
-    setIsModalOpen(true);
-  }
 
   {/*Listar platos*/}
   const fetchItems = useCallback(async (page) => {
@@ -53,6 +53,22 @@ function DataTablePlatos() {
     }
   }
 
+  // Actualizar categoría
+  const updateDish = async (updateDish) => {
+    const { id, ...rest } = updateDish;
+    const response = await fetch(`https://backend-restaurante.deyvids.dev/api/v1/Dish/Update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(rest)
+    });
+    if (response.ok) {
+      fetchItems(currentPage);
+      setSelectedDishId(null); // Limpiar el ID seleccionado después de actualizar
+    }
+  };
+
   const handlePrev = () => {
     setCurrentPage(prevPage => prevPage > 0 ? prevPage - 1 : prevPage);
   };
@@ -63,9 +79,17 @@ function DataTablePlatos() {
 
   const handlePageClick = (page) => {
     setCurrentPage(page);
-  }
+  };
 
-  const pageNumbers = Array.from({length: Math.min(totalPages, 5)}, (_, i) => i);
+  const handleClickOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleClickOpenModalUpdate = (id) => {
+    setSelectedDishId(id); // Establecer el ID de la categoría seleccionada para actualizar
+  };
+
+  const pageNumbers = Array.from({ length: Math.min(totalPages, 5) }, (_, i) => i);
 
 
   return (
@@ -103,8 +127,17 @@ function DataTablePlatos() {
                   }
                 })}
                 <td className=''>
-                  <div className='flex justify-center'>
-                    <button onClick={() => deleteDish(row.id)} className='bg-gray-300 text-gray-500 font-semibold px-3 py-2'>Borrar</button>
+                  <div className='flex gap-x-6'>
+                    <button onClick={() => deleteDish(row.id)} className='text-gray-300 font-semibold px-3 py-2 hover:text-red-600'><Trash2 /></button>
+                    <button onClick={() => handleClickOpenModalUpdate(row.id)} className='text-gray-300 font-semibold px-3 py-2 hover:text-yellow-600'><Pencil /></button>
+                    {selectedDishId === row.id && (
+                      <ModalUpdatePlatos
+                        isOpen={true}
+                        onClose={() => setSelectedDishId(null)}
+                        onAddOrder={updateDish}
+                        categoryId={selectedDishId}
+                      />
+                    )}
                   </div>
                 </td>
               </tr>

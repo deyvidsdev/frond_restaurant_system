@@ -1,27 +1,21 @@
 import { ResponsiveContainer, BarChart, CartesianGrid, Tooltip, Legend, Bar, XAxis, YAxis } from "recharts"
 
 const data = [
-    {month: 'Enero', quantity: 300},
-    {month: 'Febrero', quantity: 500},
-    {month: 'Marzo', quantity: 800},
-    {month: 'Abril', quantity: 700},
-    {month: 'Mayo', quantity: 900},
-    {month: 'Junio', quantity: 1000},
-    {month: 'Julio', quantity: 700},
-    {month: 'Agosto', quantity: 500},
-    {month: 'Septiembre', quantity: 500},
-    {month: 'Octubre', quantity: 800},
-    {month: 'Noviembre', quantity: 400},
-    {month: 'Diciembre', quantity: 200}
+    {year: '2020', quantity: 23000},
+    {year: '2021', quantity: 17000},
+    {year: '2022', quantity: 18000},
+    {year: '2023', quantity: 29000},
+    {year: '2024', quantity: 15000},
+    
 ]
 
 const SimpleBarChart = () => {
     return(
       <div className="shadow-xl p-5 dark:bg-gradient-to-b from-gris-top-dashboard to-gris-bottom-dashboard rounded-lg">
       <div className="w-full pl-5 mb-10 mt-3">
-          <p className="text-2xl font-semibold dark:text-white">Ventas por mes</p>
+          <p className="text-2xl font-semibold dark:text-white">Ventas por año</p>
       </div>
-      <ResponsiveContainer width="100%" height="80%" aspect={2}>
+      <ResponsiveContainer width="100%" height="100%" aspect={2}>
           <BarChart 
               data={data} 
               width={500} 

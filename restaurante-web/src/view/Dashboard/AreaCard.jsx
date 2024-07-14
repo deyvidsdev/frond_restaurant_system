@@ -6,9 +6,9 @@ const AreaCard = ({text1, text2, text3}) => {
         { name: 'Group A', value: 70 },
         { name: 'Group B', value: 300 },
     ];
-    const COLORS = ['#0088FE', '#00C49F'];
+    const COLORS = ['#00D0FB', '#00C49F'];
     return (
-        <div className='flex shadow-lg items-center px-5 justify-between'>
+        <div className='flex shadow-xl rounded-xl items-center px-5 py-1 justify-between dark:bg-gradient-to-b from-gris-top-dashboard to-gris-bottom-dashboard'>
             <div className='flex flex-col gap-y-1'>
                 <p className='text-xl text-gray-500 font-semibold dark:text-gray-300'>{text1}</p>
                 <p className='text-2xl font-semibold dark:text-white'>{text2}</p>
@@ -20,7 +20,6 @@ const AreaCard = ({text1, text2, text3}) => {
                       cx={50}
                       cy={45}
                       innerRadius={20}
-                      fill="#8884d8"
                       paddingAngle={5}
                       dataKey="value"
                   >

@@ -5,8 +5,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'negro-claro' : '#242422',
-        'gris-oscuro' : '#2D2D2D'
+        'negro-claro' : '#2D2D2D',
+        'gris-oscuro' : '#2D2D2D',
+        'gris-top-dashboard' : '#525152',
+        'gris-bottom-dashboard' : '#343434'
       }
     },
   },

@@ -1,4 +1,5 @@
 import SimpleBarChart from "../view/Dashboard/SimpleBarChart"
+import SimpleBarChart2 from "../view/Dashboard/SimpleBarChart2"
 import Header from "./Header"
 import Main from "./Main"
 import AreaCard from "../view/Dashboard/AreaCard"
@@ -21,7 +22,7 @@ export default function DashboardContent() {
                     </div>
                     <div className="grid grid-cols-2 gap-x-10">
                         <SimpleBarChart/>
-                        <SimpleBarChart/>
+                        <SimpleBarChart2/>
                     </div>
                 </div>
             </Main>
