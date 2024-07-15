@@ -12,7 +12,7 @@ import AyudaContent from './AyudaContent'
 import MesasContent from './MesasContent'
 import { Routes, useNavigate, Route,Navigate, useLocation } from 'react-router-dom'
 import useTheme from '../hook/useTheme'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { AuthContext } from "../context/AuthProvider"
 
 
@@ -57,6 +57,7 @@ export default function MainApp() {
                     <Route path="/" element={<Navigate to="/dashboard" />} />
                     <Route path="/dashboard" element={<DashboardContent/>} />
                     <Route path="/ventas" element={<VentasContent/>} />
+                    <Route path="/ventas/:pisoName" element={<MesasContent />}/>
                     <Route path="/ordenes" element={<OrdenesContent/>} />
                     <Route path="/categorias" element={<CategoriasContent/>} />
                     <Route path="/platos" element={<PlatosContent/>} />
