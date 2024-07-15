@@ -47,8 +47,6 @@ export default function MainApp() {
             </>
           )}
         <SidebarItem icon={<Pencil size={20}/>} text="Pisos" active={isActive("/pisos")} onClick={() => navigate("/pisos")}/>
-        <SidebarItem icon={<Bolt size={20}/>} text="Ajustes" active={isActive("/ajustes")} onClick={() => navigate("/ajustes")} />
-        <SidebarItem icon={<CircleHelp size={20}/>} text="Ayuda" active={isActive("/ayuda")} onClick={() => navigate("/ayuda")}/>
         </Sidebar>
         <section className={`w-full min-h-screen bg-gray-50 dark:bg-negro-claro`}>
             <Routes>

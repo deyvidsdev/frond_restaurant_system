@@ -1,5 +1,14 @@
+import ModalMesas from "../view/ModalPedidoMesa/ModalMesas"
+import { useState } from "react"
+export default function PisosDisponiblesVentas({text, isOccupied}) {
 
-export default function PisosDisponiblesVentas({text, isOccupied, onClick}) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+
+  const handleClickOpenModal = () => {
+    setIsModalOpen(true)
+  }
+
   
   return(
       <>
@@ -9,7 +18,8 @@ export default function PisosDisponiblesVentas({text, isOccupied, onClick}) {
               <span className={`h-5 mb-9 px-1 text-center text-xs font-bold rounded-lg  ${isOccupied ? "bg-red-100 text-red-600" : " bg-green-100 text-green-600"}`}>
                   {isOccupied ? "Ocupado" : "Disponible"}
               </span>
-                <button className="bg-blue-600 text-white font-semibold px-3 py-2 rounded-lg mb-4" onClick={onClick}>Atender</button>
+                <button className="bg-blue-600 text-white font-semibold px-3 py-2 rounded-lg mb-4" onClick={handleClickOpenModal}>Atender</button>
+                <ModalMesas isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           </div>
       </>
   )

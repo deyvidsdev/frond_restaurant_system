@@ -26,10 +26,10 @@ export default function Modal({ isOpen, onClose, onAddOrder}) {
     setErrorText('')
 
     //Validar entradas vacias
-    const isEmpty = Object.values(form).some(value => value.trim() === '')
-    if(isEmpty){
-      setErrorText('Por favor llene todos los campos')
-      return
+    const isEmpty = Object.values(form).some(value => typeof value === 'string' && value.trim() === '');
+    if (isEmpty) {
+      setErrorText('Por favor llene todos los campos');
+      return;
     }
 
     onAddOrder(form)
